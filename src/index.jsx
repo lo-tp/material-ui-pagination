@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Component from '../dist/index';
-
 export const App = () => (
-  <Component />
+  <h1 >
+    hello world
+  </h1>
 );
 
 export default App;
