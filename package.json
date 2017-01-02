@@ -9,11 +9,16 @@
     "webpack-package": "node_modules/webpack/bin/webpack.js --progress --colors --watch --config webpack.config.js",
     "dev-server": "node example/hotLoader.js",
     "lint": "./node_modules/eslint/bin/eslint.js . --ext .jsx --ext js -c .eslintrc.js --ignore-path .eslintignore --fix",
-    "test": "node_modules/jest/bin/jest.js"
+    "test": "jest"
   },
   "dependencies": {
+    "material-ui": "^0.16.6",
     "react": "^15.4.1",
-    "react-dom": "^15.4.1"
+    "react-dom": "^15.4.1",
+    "react-tap-event-plugin": "^2.0.1"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",
@@ -30,6 +35,7 @@
     "eslint-plugin-react": "^6.6.0",
     "express": "^4.14.0",
     "jest": "^18.1.0",
+    "jsdom": "^9.9.1",
     "react-addons-test-utils": "^15.4.1",
     "react-hot-loader": "3.0.0-beta.6",
     "webpack": "^1.14.0",

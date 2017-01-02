@@ -13,10 +13,10 @@ module.exports = {
     libraryTarget: config.libraryTarget,
     filename: 'index.js',
   },
-  externals: config.externals,
   plugins: [
     new webpack.optimize.UglifyJsPlugin(),
   ],
+  externals: config.externals,
   module: {
     loaders: [
       {
