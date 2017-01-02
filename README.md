@@ -40,3 +40,6 @@ module.exports = {
 - `library` allows you to optionally specify the name of your library.
 - `libraryTarget` allows you to specify the type of output. I.e. CommonJs, AMD, for usage in a script tag or as UMD module.
 - `externals` allows you to specify dependencies for your library that are not resolved by webpack, but become dependencies of the output. This means they are imported from the environment during runtime.
+
+### Test
+- `npm run test`
