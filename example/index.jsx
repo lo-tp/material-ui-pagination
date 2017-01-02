@@ -1,10 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const HelloMessage = () => (
-  <h1 >
-    hello
-  </h1>
+// eslint-disable-next-line import/no-named-as-default
+import App from './app';
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
 );
 
-ReactDOM.render(<HelloMessage />, document.getElementById('root'));
+if (module.hot) {
+  module.hot.accept('./app', () => {
+    // eslint-disable-next-line global-require
+    const NewApp = require('./app').default;
+    ReactDOM.render(
+      <NewApp />,
+      document.getElementById('root')
+    );
+  });
+}
