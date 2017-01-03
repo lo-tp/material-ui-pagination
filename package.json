@@ -1,11 +1,21 @@
 {
-  "name": "react-component-dev",
+  "name": "material-ui-pagination",
+  "description": "An easy to use and customizable pagination component for material ui.",
+  "author": "lotp <lotp202@gmail.com> (blog.lotp.xyz)",
+  "homepage": "https://github.com/lo-tp/sm2-plu://github.com/lo-tp/material-ui-pagination#readme",
+  "keywords":[
+    "pagination",
+    "material-ui"
+  ],
+  "repository":{
+    "type":"git",
+    "url":"git+https://github.com/lo-tp/material-ui-pagination"
+  },
+  "main": "dist/index.js",
   "version": "1.0.0",
-  "description": "used to development react component",
-  "main": "index.js",
-  "author": "lotp",
-  "license": "MIT",
   "scripts": {
+    "prepublish":"npm run build",
+    "build": "node_modules/webpack/bin/webpack.js --progress --colors  --config webpack.config.js",
     "webpack-package": "node_modules/webpack/bin/webpack.js --progress --colors --watch --config webpack.config.js",
     "dev-server": "node example/hotLoader.js",
     "lint": "./node_modules/eslint/bin/eslint.js . --ext .jsx --ext js -c .eslintrc.js --ignore-path .eslintignore --fix",
