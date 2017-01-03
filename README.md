@@ -1,45 +1,38 @@
 
 
-### react-component-dev-starter
+## material-ui-pagination
 ----
+An easy to use and customizable pagination component for material ui.
 
+Play with this [demo](http://blog.lotp.xyz/demo/material-ui-pagination/) to see how it works.
 
 ### Quick Start
+---
+- `npm install material-ui-pagination`
+- `import Pagination from 'material-ui-pagination'`;
+
+### Usage
+---
+material-ui-pagination exposes one module called, `Pagination`, which accepts 4 props:
+
+- `total`: total number of pages.
+- `display`: number of pages you want to show in the panel.
+- `current`: current page selected.
+- `onChange`: handles the change event of selected page
+    
+  `function(value: integer) => void`
+
+### Run Local Demo
+---
+
+- `git clone https://github.com/lo-tp/material-ui-pagination`
 - `npm install`
-- `npm run webpack-package`
 - `npm run dev-server`
 - visit `http://localhost:7890/`
-- edit `src/index.jsx` to and the demo would change accordingly
 
-### Configuration
-Opening `config.js`, it is like this.
-``` javascript
-module.exports = {
-  library: 'react-component-dev',
-  libraryTarget: 'umd',
-  externals: [
-    {
-      react: {
-        root: 'React',
-        commonjs2: 'react',
-        commonjs: 'react',
-        amd: 'react',
-      },
-    },
-    {
-      'react-dom': {
-        root: 'ReactDOM',
-        commonjs2: 'react-dom',
-        commonjs: 'react-dom',
-        amd: 'react-dom',
-      },
-    },
-  ],
-};
-```
-- `library` allows you to optionally specify the name of your library.
-- `libraryTarget` allows you to specify the type of output. I.e. CommonJs, AMD, for usage in a script tag or as UMD module.
-- `externals` allows you to specify dependencies for your library that are not resolved by webpack, but become dependencies of the output. This means they are imported from the environment during runtime.
+### Run test
+---
 
-### Test
+- `git clone https://github.com/lo-tp/material-ui-pagination`
+- `npm install`
 - `npm run test`
