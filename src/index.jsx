@@ -68,7 +68,7 @@ FirstPageLink.propTypes = {
   onClick: PropTypes.func,
 };
 
-const LastPageLink = ({ onClick }) => (
+export const LastPageLink = ({ onClick }) => (
   <FlatButton
     style = { flatButtonStyle }
     icon = { <NavigationLastPage /> }
@@ -79,12 +79,12 @@ LastPageLink.propTypes = {
   onClick: PropTypes.func,
 };
 
-const array = [100, 1000, 13, 1000, 1000];
 export default class Pagination extends React.Component {
 
   constructor(props) {
     super(props);
     const tem = getStateFromProps(props);
+    this.setCurrent = this.setCurrent.bind(this);
 
     this.state = {
       ...tem,
@@ -100,13 +100,29 @@ export default class Pagination extends React.Component {
     });
   }
 
+  // componentDidUpdate(prevProps, prevState) {
+    // if (prevState !== this.state) {
+      // this.setState({
+        // ...this.state,
+        // ...calculateRange(this.state),
+      // });
+    // }
+  // }
+
   setCurrent(current) {
+    const tem = { ...this.state, current };
     this.setState({
-      current,
+      ...tem,
+      ...calculateRange(tem),
     });
   }
 
   render() {
+    const array = [];
+    for (let i = this.state.start; i <= this.state.end; i += 1) {
+      array.push(i);
+    }
+
     return (
       <div >
         <FirstPageLink
@@ -118,7 +134,7 @@ export default class Pagination extends React.Component {
                 key = { k }
                 value = { page }
                 isActive = { this.state.current === page }
-                onClick = { () => this.setCurrent(page) }
+                onClick = { () => console.info('hello') }
               />
             ))
           }

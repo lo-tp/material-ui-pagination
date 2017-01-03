@@ -3,9 +3,9 @@ import Component from '../dist/index';
 
 export const App = () => (
   <Component
-    total = { 100 }
+    total = { 20 }
     current = { 20 }
-    display = { 10 }
+    display = { 7 }
   />
 );
 
