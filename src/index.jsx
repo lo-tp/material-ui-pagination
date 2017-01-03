@@ -4,7 +4,7 @@ import NavigationFirstPage from 'material-ui/svg-icons/navigation/first-page';
 import NavigationLastPage from 'material-ui/svg-icons/navigation/last-page';
 
 const flatButtonStyle = {
-  minWidth: 24,
+  minWidth: 16,
 };
 
 const calculateRange = arg => {
@@ -68,7 +68,7 @@ FirstPageLink.propTypes = {
   onClick: PropTypes.func,
 };
 
-export const LastPageLink = ({ onClick }) => (
+const LastPageLink = ({ onClick }) => (
   <FlatButton
     style = { flatButtonStyle }
     icon = { <NavigationLastPage /> }
