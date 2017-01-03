@@ -17,16 +17,32 @@ export default class App extends React.Component {
   setTotal(event, total) {
     // eslint-disable-next-line no-param-reassign
     total = total.trim();
-    if (total.match(/^\d+$/)) {
-      this.setState({ total: parseInt(total, 10) });
+    if (total.match(/^\d*$/)) {
+      if (total !== '') {
+        // eslint-disable-next-line no-param-reassign
+        total = parseInt(total, 10);
+      } else {
+        // eslint-disable-next-line no-param-reassign
+        total = 0;
+      }
+
+      this.setState({ total });
     }
   }
 
   setDisplay(event, display) {
     // eslint-disable-next-line no-param-reassign
     display = display.trim();
-    if (display.match(/^\d+$/)) {
-      this.setState({ display: parseInt(display, 10) });
+    if (display.match(/^\d*$/)) {
+      if (display !== '') {
+        // eslint-disable-next-line no-param-reassign
+        display = parseInt(display, 10);
+      } else {
+        // eslint-disable-next-line no-param-reassign
+        display = 0;
+      }
+
+      this.setState({ display });
     }
   }
 
