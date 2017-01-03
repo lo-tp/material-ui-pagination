@@ -102,6 +102,7 @@ export default class Pagination extends React.Component {
 
   setCurrent(current) {
     const tem = { ...this.state, current };
+    this.props.onChange(current);
     this.setState({
       ...tem,
       ...calculateRange(tem),
@@ -141,4 +142,5 @@ Pagination.propTypes = {
   total: PropTypes.number,
   current: PropTypes.number,
   display: PropTypes.number,
+  onChange: PropTypes.func,
 };

@@ -22,6 +22,7 @@ describe('props and state related test', () => {
         total = { 100 }
         current = { 20 }
         display = { 10 }
+        onChange = { () => {} }
       />,
     );
     expect(index.state('total')).toEqual(100);
@@ -35,6 +36,7 @@ describe('props and state related test', () => {
         total = { -1 }
         current = { -1 }
         display = { -1 }
+        onChange = { () => {} }
       />,
     );
     expect(index.state('total')).toEqual(1);
@@ -48,6 +50,7 @@ describe('props and state related test', () => {
         total = { 10 }
         current = { 20 }
         display = { 30 }
+        onChange = { () => {} }
       />,
     );
     expect(index.state('current')).toEqual(10);
@@ -61,6 +64,7 @@ describe('range calculation', () => {
       total = { 10 }
       current = { 1 }
       display = { 30 }
+      onChange = { () => {} }
     />, {
       context: {
         muiTheme: getMuiTheme(darkBaseTheme),
@@ -144,6 +148,7 @@ describe('check if renders in the right way', () => {
       total = { 10 }
       current = { 1 }
       display = { 30 }
+      onChange = { () => {} }
     />, {
       context: {
         muiTheme: getMuiTheme(darkBaseTheme),
@@ -169,12 +174,13 @@ describe('check if renders in the right way', () => {
   });
 });
 
-describe('click handlers', () => {
+describe('click behavior', () => {
   const index = mount(
     <Index
       total = { 30 }
       current = { 5 }
       display = { 7 }
+      onChange = { () => {} }
     />, {
       context: {
         muiTheme: getMuiTheme(darkBaseTheme),
@@ -206,5 +212,43 @@ describe('click handlers', () => {
     expect(index.state('current')).toEqual(23);
     expect(index.state('start')).toEqual(20);
     expect(index.state('end')).toEqual(26);
+  });
+});
+
+describe('onChange handler', () => {
+  let current = 5;
+  const handler = v => {
+    current = v;
+  };
+
+  const index = mount(
+    <Index
+      total = { 30 }
+      current = { 5 }
+      display = { 7 }
+      onChange = { handler }
+    />, {
+      context: {
+        muiTheme: getMuiTheme(darkBaseTheme),
+      },
+      childContextTypes: {
+        muiTheme: React.PropTypes.object.isRequired,
+      },
+    }
+  );
+  const btns = index.find(FlatButton);
+  it('firstpage btn', () => {
+    click(btns.first());
+    expect(current).toEqual(1);
+  });
+  it('lastpage btn', () => {
+    click(btns.last());
+    expect(current).toEqual(30);
+  });
+  it('other btn', () => {
+    click(btns.at(1));
+    expect(current).toEqual(24);
+    click(btns.at(3));
+    expect(current).toEqual(23);
   });
 });
