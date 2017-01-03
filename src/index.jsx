@@ -79,7 +79,7 @@ LastPageLink.propTypes = {
   onClick: PropTypes.func,
 };
 
-export default class Pagination extends React.Component {
+class Pagination extends React.Component {
 
   constructor(props) {
     super(props);
@@ -147,3 +147,4 @@ Pagination.propTypes = {
   display: PropTypes.number,
   onChange: PropTypes.func,
 };
+export default Pagination;

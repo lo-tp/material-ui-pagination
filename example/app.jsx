@@ -2,7 +2,7 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import Component from '../dist/index';
 
-export default class App extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.setTotal = this.setTotal.bind(this);
@@ -48,8 +48,13 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div >
-        <p >
+      <div
+        style = { {
+          width: 500,
+          margin: '0 auto',
+        } }
+      >
+        <h3 >
           Now you are at
           <em
             style = { { color: 'red' } }
@@ -57,7 +62,7 @@ export default class App extends React.Component {
             {` ${this.state.number} ` }
           </em>
           page
-        </p>
+        </h3>
         <TextField
           style = { { width: 340 } }
           onChange = { this.setTotal }
@@ -82,3 +87,5 @@ export default class App extends React.Component {
     );
   }
 }
+
+export default App;
