@@ -100,15 +100,6 @@ export default class Pagination extends React.Component {
     });
   }
 
-  // componentDidUpdate(prevProps, prevState) {
-    // if (prevState !== this.state) {
-      // this.setState({
-        // ...this.state,
-        // ...calculateRange(this.state),
-      // });
-    // }
-  // }
-
   setCurrent(current) {
     const tem = { ...this.state, current };
     this.setState({
@@ -134,7 +125,7 @@ export default class Pagination extends React.Component {
                 key = { k }
                 value = { page }
                 isActive = { this.state.current === page }
-                onClick = { () => console.info('hello') }
+                onClick = { () => this.setCurrent(page) }
               />
             ))
           }

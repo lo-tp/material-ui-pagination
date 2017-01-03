@@ -169,32 +169,42 @@ describe('check if renders in the right way', () => {
   });
 });
 
-// describe('click handlers', () => {
-  // const index = mount(
-    // <Index
-      // total = { 30 }
-      // current = { 5 }
-      // display = { 7 }
-    // />, {
-      // context: {
-        // muiTheme: getMuiTheme(darkBaseTheme),
-      // },
-      // childContextTypes: {
-        // muiTheme: React.PropTypes.object.isRequired,
-      // },
-    // }
-  // );
-  // const btns = index.find(FlatButton);
-  // it('firstpage btn', () => {
-    // click(btns.first());
-    // expect(index.state('current')).toEqual(1);
-    // expect(index.state('start')).toEqual(1);
-    // expect(index.state('end')).toEqual(7);
-  // });
-  // it('lastpage btn', () => {
-    // click(btns.last());
-    // expect(index.state('current')).toEqual(30);
-    // expect(index.state('start')).toEqual(24);
-    // expect(index.state('end')).toEqual(30);
-  // });
-// });
+describe('click handlers', () => {
+  const index = mount(
+    <Index
+      total = { 30 }
+      current = { 5 }
+      display = { 7 }
+    />, {
+      context: {
+        muiTheme: getMuiTheme(darkBaseTheme),
+      },
+      childContextTypes: {
+        muiTheme: React.PropTypes.object.isRequired,
+      },
+    }
+  );
+  const btns = index.find(FlatButton);
+  it('firstpage btn', () => {
+    click(btns.first());
+    expect(index.state('current')).toEqual(1);
+    expect(index.state('start')).toEqual(1);
+    expect(index.state('end')).toEqual(7);
+  });
+  it('lastpage btn', () => {
+    click(btns.last());
+    expect(index.state('current')).toEqual(30);
+    expect(index.state('start')).toEqual(24);
+    expect(index.state('end')).toEqual(30);
+  });
+  it('other btn', () => {
+    click(btns.at(1));
+    expect(index.state('current')).toEqual(24);
+    expect(index.state('start')).toEqual(21);
+    expect(index.state('end')).toEqual(27);
+    click(btns.at(3));
+    expect(index.state('current')).toEqual(23);
+    expect(index.state('start')).toEqual(20);
+    expect(index.state('end')).toEqual(26);
+  });
+});
