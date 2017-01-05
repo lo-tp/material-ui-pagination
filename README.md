@@ -6,7 +6,7 @@ An easy to use and customizable pagination component for material ui.
 
 Play with this [demo](http://blog.lotp.xyz/demo/material-ui-pagination/) to see how it works.
 
-<img src="./docs/img/demonstrastion.gif" alt="Demo" />
+![Demonstration](https://cloud.githubusercontent.com/assets/6308071/21675486/e541a024-d36c-11e6-9d41-622c6262601f.gif)
 
 ### Quick Start
 ---
