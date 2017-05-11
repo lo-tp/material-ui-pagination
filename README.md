@@ -1,7 +1,7 @@
+# material-ui-pagination
 
+[![Build Status](https://travis-ci.org/lo-tp/material-ui-pagination.svg?branch=master)](https://travis-ci.org/lo-tp/material-ui-pagination)
 
-## material-ui-pagination
-----
 An easy to use and customizable pagination component for material ui.
 
 Play with this [demo](http://blog.lotp.xyz/demo/material-ui-pagination/) to see how it works.
