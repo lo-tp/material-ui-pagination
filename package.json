@@ -3,18 +3,18 @@
   "description": "An easy to use and customizable pagination component for material ui.",
   "author": "lotp <lotp202@gmail.com> (blog.lotp.xyz)",
   "homepage": "https://github.com/lo-tp/sm2-plu://github.com/lo-tp/material-ui-pagination#readme",
-  "keywords":[
+  "keywords": [
     "pagination",
     "material-ui"
   ],
-  "repository":{
-    "type":"git",
-    "url":"git+https://github.com/lo-tp/material-ui-pagination"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lo-tp/material-ui-pagination"
   },
   "main": "dist/index.js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "scripts": {
-    "prepublish":"npm run build",
+    "prepublish": "npm run build",
     "build": "node_modules/webpack/bin/webpack.js --progress --colors  --config webpack.config.js",
     "webpack-package": "node_modules/webpack/bin/webpack.js --progress --colors --watch --config webpack.config.js",
     "dev-server": "node example/hotLoader.js",
@@ -23,8 +23,9 @@
   },
   "dependencies": {
     "material-ui": "^0.16.6",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1",
+    "prop-types": "^15.5.9",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
     "react-tap-event-plugin": "^2.0.1"
   },
   "jest": {

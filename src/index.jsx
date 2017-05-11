@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import FlatButton from 'material-ui/FlatButton';
 import NavigationFirstPage from 'material-ui/svg-icons/navigation/first-page';
 import NavigationLastPage from 'material-ui/svg-icons/navigation/last-page';
+import propTypes from 'prop-types';
 
 const flatButtonStyle = {
   minWidth: 16,
@@ -139,12 +140,15 @@ class Pagination extends React.Component {
 }
 
 Pagination.propTypes = {
+
   // eslint-disable-next-line react/no-unused-prop-types
-  total: PropTypes.number,
+  total: propTypes.number,
+
   // eslint-disable-next-line react/no-unused-prop-types
-  current: PropTypes.number,
+  current: propTypes.number,
+
   // eslint-disable-next-line react/no-unused-prop-types
-  display: PropTypes.number,
-  onChange: PropTypes.func,
+  display: propTypes.number,
+  onChange: propTypes.func,
 };
 export default Pagination;
