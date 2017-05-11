@@ -142,13 +142,13 @@ class Pagination extends React.Component {
 Pagination.propTypes = {
 
   // eslint-disable-next-line react/no-unused-prop-types
-  total: propTypes.number,
+  total: PropTypes.number,
 
   // eslint-disable-next-line react/no-unused-prop-types
-  current: propTypes.number,
+  current: PropTypes.number,
 
   // eslint-disable-next-line react/no-unused-prop-types
-  display: propTypes.number,
-  onChange: propTypes.func,
+  display: PropTypes.number,
+  onChange: PropTypes.func,
 };
 export default Pagination;
