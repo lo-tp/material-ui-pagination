@@ -46,7 +46,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import Component from '../dist/index';
+import Pagination from 'material-ui-pagination';
 
 injectTapEventPlugin();
 
@@ -111,7 +111,7 @@ class App extends React.Component {
           </em>
           page
         </h3>
-        <Component
+        <Pagination
           total = { this.state.total }
           current = { this.state.number }
           display = { this.state.display }
