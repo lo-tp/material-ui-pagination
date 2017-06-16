@@ -151,4 +151,6 @@ Pagination.propTypes = {
   display: PropTypes.number,
   onChange: PropTypes.func,
 };
+
+Pagination.displayName = 'Pagination';
 export default Pagination;
