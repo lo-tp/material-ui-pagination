@@ -12,7 +12,7 @@
     "url": "git+https://github.com/lo-tp/material-ui-pagination"
   },
   "main": "dist/index.js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "scripts": {
     "prepublish": "npm run build",
     "build": "node_modules/webpack/bin/webpack.js --progress --colors  --config webpack.config.js",
