@@ -15,14 +15,21 @@ Play with this [demo](http://blog.lotp.xyz/demo/material-ui-pagination/) to see 
 
 ### Usage
 ---
-material-ui-pagination exposes one module called, `Pagination`, which accepts 4 props:
+material-ui-pagination exposes one module called, `Pagination`, which accepts a few props:
 
-- `total`: total number of pages.
-- `display`: number of pages you want to show in the panel.
-- `current`: current page selected.
-- `onChange`: handles the change event of selected page
-    
-  `function(value: integer) => void`
+Option               | Description              
+---------------------|-----------------------------------------------
+`total`              | Total number of pages
+`display`            | Number of pages you want to show in the panel
+`current`            | Current page selected
+`onChange`           | Handles the change event of selected page 
+`styleRoot`          | Styles for root element
+`styleFirstPageLink` | Styles for `FirstPageLink`. If `styleFirstPageLink` not exist will be render a `NavigationFirstPage` from `Material UI`, else will be render `<div>` with styles
+`styleLastPageLink`  | Styles for `LastPageLink`. If `styleLastPageLink` not exist will be render a `NavigationLastPage` from `Material UI`, else will be render `<div>` with styles
+`styleButton`        | Styles for pages element. If `styleButton` not exist will be render a `FlatButton` from `Material UI`, else will be render `<div>` with styles
+`stylePrimary`       | Styles for active page element. Requires the `styleButton` 
+
+`function(value: integer) => void`
 
 ### Run Local Demo
 ---

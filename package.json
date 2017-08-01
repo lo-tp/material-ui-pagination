@@ -12,11 +12,14 @@
     "url": "git+https://github.com/lo-tp/material-ui-pagination"
   },
   "main": "dist/index.js",
-  "version": "1.0.4",
+  "version": "1.1.0",
+  "bin": {
+    "webpack": "node_modules/webpack/bin/webpack.js"
+  },
   "scripts": {
     "prepublish": "npm run build",
-    "build": "node_modules/webpack/bin/webpack.js --progress --colors  --config webpack.config.js",
-    "webpack-package": "node_modules/webpack/bin/webpack.js --progress --colors --watch --config webpack.config.js",
+    "build": "webpack --progress --colors  --config webpack.config.js",
+    "webpack-package": "webpack --progress --colors --watch --config webpack.config.js",
     "dev-server": "node example/hotLoader.js",
     "lint": "./node_modules/eslint/bin/eslint.js . --ext .jsx --ext js -c .eslintrc.js --ignore-path .eslintignore --fix",
     "test": "jest"
