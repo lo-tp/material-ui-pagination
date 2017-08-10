@@ -43,41 +43,59 @@ const getStateFromProps = props => {
   return { current, display, total };
 };
 
-const Page = ({ value, isActive, onClick }) => (
-  <FlatButton
+const Page = ({ value, isActive, onClick, styleButton, stylePrimary }) => {
+  return !styleButton ? (<FlatButton
     style = { flatButtonStyle }
     label = { value.toString() }
     primary = { isActive }
     onTouchTap = { onClick }
-  />
-);
+  />) : (<div
+    style = { isActive ? stylePrimary : styleButton }
+    label = { value.toString() }
+    onTouchTap = { onClick }
+  >
+    {value}
+  </div>)
+
+};
 Page.propTypes = {
   value: PropTypes.number,
   isActive: PropTypes.bool,
   onClick: PropTypes.func,
+  styleButton: PropTypes.object,
+  stylePrimary: PropTypes.object,
 };
 
-const FirstPageLink = ({ onClick }) => (
-  <FlatButton
+const FirstPageLink = ({ onClick, styleFirstPageLink }) => {
+  return !styleFirstPageLink ? (<FlatButton
     style = { flatButtonStyle }
     icon = { <NavigationFirstPage /> }
     onTouchTap = { onClick }
-  />
-);
+  />) : (<div
+    style = { styleFirstPageLink }
+    onTouchTap = { onClick }
+  />);
+};
 
 FirstPageLink.propTypes = {
   onClick: PropTypes.func,
+  styleFirstPageLink: PropTypes.object,
 };
 
-const LastPageLink = ({ onClick }) => (
-  <FlatButton
+const LastPageLink = ({ onClick, styleLastPageLink }) => {
+  return !styleLastPageLink ? (<FlatButton
     style = { flatButtonStyle }
     icon = { <NavigationLastPage /> }
     onTouchTap = { onClick }
-  />
-);
+  />) : (<div
+    style = { styleLastPageLink }
+    onTouchTap = { onClick }
+  />);
+};
+
 LastPageLink.propTypes = {
   onClick: PropTypes.func,
+  styleLastPageLink: PropTypes.object,
 };
 
 class Pagination extends React.Component {
@@ -117,9 +135,10 @@ class Pagination extends React.Component {
     }
 
     return (
-      <div >
+      <div style={this.props.styleRoot}>
         <FirstPageLink
           onClick = { () => this.setCurrent(1) }
+          styleFirstPageLink = { this.props.styleFirstPageLink }
         />
         {
             array.map((page, k) => (
@@ -128,11 +147,14 @@ class Pagination extends React.Component {
                 value = { page }
                 isActive = { this.state.current === page }
                 onClick = { () => this.setCurrent(page) }
+                styleButton = { this.props.styleButton }
+                stylePrimary = { this.props.stylePrimary }
               />
             ))
           }
         <LastPageLink
           onClick = { () => this.setCurrent(this.state.total) }
+          styleLastPageLink = { this.props.styleLastPageLink }
         />
       </div>
     );
@@ -150,6 +172,20 @@ Pagination.propTypes = {
   // eslint-disable-next-line react/no-unused-prop-types
   display: PropTypes.number,
   onChange: PropTypes.func,
+
+  styleRoot: PropTypes.object,
+  styleFirstPageLink: PropTypes.object,
+  styleLastPageLink: PropTypes.object,
+  styleButton: PropTypes.object,
+  stylePrimary: PropTypes.object,
+};
+
+Pagination.defaultProps = {
+  styleRoot: null,
+  styleFirstPageLink: null,
+  styleLastPageLink: null,
+  styleButton: null,
+  stylePrimary: null,
 };
 
 Pagination.displayName = 'Pagination';

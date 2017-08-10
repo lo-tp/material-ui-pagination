@@ -83,6 +83,52 @@ class App extends React.Component {
           display = { this.state.display }
           onChange = { number => this.setState({ number }) }
         />
+        <Component
+          total = { this.state.total }
+          current = { this.state.number }
+          display = { this.state.display }
+          onChange = { number => this.setState({ number }) }
+          styleRoot = { { marginTop: '30px' } }
+          styleFirstPageLink = {
+            {
+              border: '8px solid transparent',
+              borderRight: '8px solid forestgreen',
+              display: 'inline-block',
+              verticalAlign: 'text-top',
+              cursor: 'pointer'
+            }
+          }
+          styleLastPageLink = {
+            {
+              border: '8px solid transparent',
+              borderLeft: '8px solid red',
+              display: 'inline-block',
+              verticalAlign: 'text-top',
+              cursor: 'pointer'
+            }
+          }
+          styleButton = {
+            {
+              color: 'blue',
+              fontWeight: '700',
+              display: 'inline-block',
+              verticalAlign: 'text-bottom',
+              padding: '0 10px',
+              cursor: 'pointer'
+            }
+          }
+          stylePrimary = {
+            {
+              color: 'blue',
+              fontWeight: '400',
+              backgroundColor: 'sandybrown',
+              display: 'inline-block',
+              verticalAlign: 'text-bottom',
+              padding: '0 10px',
+              cursor: 'pointer'
+            }
+          }
+        />
       </div>
     );
   }
