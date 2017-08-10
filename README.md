@@ -22,14 +22,13 @@ Option               | Description
 `total`              | Total number of pages
 `display`            | Number of pages you want to show in the panel
 `current`            | Current page selected
-`onChange`           | Handles the change event of selected page 
+`onChange`           | Handles the change event of selected page: `function(value: integer) => void`
 `styleRoot`          | Styles for root element
-`styleFirstPageLink` | Styles for `FirstPageLink`. If `styleFirstPageLink` not exist will be render a `NavigationFirstPage` from `Material UI`, else will be render `<div>` with styles
-`styleLastPageLink`  | Styles for `LastPageLink`. If `styleLastPageLink` not exist will be render a `NavigationLastPage` from `Material UI`, else will be render `<div>` with styles
-`styleButton`        | Styles for pages element. If `styleButton` not exist will be render a `FlatButton` from `Material UI`, else will be render `<div>` with styles
+`styleFirstPageLink` | Styles for `FirstPageLink`. If not provided, a `NavigationFirstPage` from `Material UI` will be rendered as default, otherwise `<div>` with styles will show up instead
+`styleLastPageLink`  | Styles for `LastPageLink`. If not provided, a `NavigationLastPage` from `Material UI` will be rendered as default, otherwise `<div>` with styles will show up instead
+`styleButton`        | Styles for page number button. If not provided, a `FlatButton` from `Material UI` will be rendered as default, otherwise `<div>` with styles will show up instead
 `stylePrimary`       | Styles for active page element. Requires the `styleButton` 
 
-`function(value: integer) => void`
 
 ### Run Local Demo
 ---
