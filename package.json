@@ -28,8 +28,7 @@
     "material-ui": "^0.18.0",
     "prop-types": "^15.5.9",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-tap-event-plugin": "^2.0.1"
+    "react-dom": "^15.5.4"
   },
   "jest": {
     "testEnvironment": "jsdom"
