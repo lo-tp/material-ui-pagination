@@ -48,11 +48,11 @@ const Page = ({ value, isActive, onClick, styleButton, stylePrimary }) => {
     style = { flatButtonStyle }
     label = { value.toString() }
     primary = { isActive }
-    onTouchTap = { onClick }
+    onClick = { onClick }
   />) : (<div
     style = { isActive ? stylePrimary : styleButton }
     label = { value.toString() }
-    onTouchTap = { onClick }
+    onClick = { onClick }
   >
     {value}
   </div>)
@@ -70,10 +70,10 @@ const FirstPageLink = ({ onClick, styleFirstPageLink }) => {
   return !styleFirstPageLink ? (<FlatButton
     style = { flatButtonStyle }
     icon = { <NavigationFirstPage /> }
-    onTouchTap = { onClick }
+    onClick = { onClick }
   />) : (<div
     style = { styleFirstPageLink }
-    onTouchTap = { onClick }
+    onClick = { onClick }
   />);
 };
 
@@ -86,10 +86,10 @@ const LastPageLink = ({ onClick, styleLastPageLink }) => {
   return !styleLastPageLink ? (<FlatButton
     style = { flatButtonStyle }
     icon = { <NavigationLastPage /> }
-    onTouchTap = { onClick }
+    onClick = { onClick }
   />) : (<div
     style = { styleLastPageLink }
-    onTouchTap = { onClick }
+    onClick = { onClick }
   />);
 };
 
