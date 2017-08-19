@@ -4,15 +4,12 @@ import TestUtils from 'react-addons-test-utils'; // ES6
 import { shallow, mount } from 'enzyme';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 import FlatButton from 'material-ui/FlatButton';
 import Index from '../dist/index';
 
-injectTapEventPlugin();
-
 const click = wrapper => {
   // eslint-disable-next-line react/no-find-dom-node
-  TestUtils.Simulate.touchTap(ReactDOM.findDOMNode(wrapper.node));
+  TestUtils.Simulate.click(ReactDOM.findDOMNode(wrapper.node));
 };
 
 describe('props and state related test', () => {
