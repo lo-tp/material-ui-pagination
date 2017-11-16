@@ -9,7 +9,7 @@ Play with this [demo](http://blog.lotp.xyz/demo/material-ui-pagination/) to see 
 ![Demonstration](https://cloud.githubusercontent.com/assets/6308071/21675486/e541a024-d36c-11e6-9d41-622c6262601f.gif)
 ### Notice
 ---
-Because some upstream [modification about the click event](https://github.com/callemall/material-ui/releases/tag/v0.19.0) made to the `material-ui` repo, I have to make some changes in response.
+Because of some upstream [modifications about the click event](https://github.com/callemall/material-ui/releases/tag/v0.19.0) made to the `material-ui` repo, I have to make some changes in response.
 
 You can check what I have done in [issue16](https://github.com/lo-tp/material-ui-pagination/issues/16#issuecomment-323790709).
 
