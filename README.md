@@ -13,7 +13,7 @@ Because of some upstream [modifications about the click event](https://github.co
 
 You can check what I have done in [issue16](https://github.com/lo-tp/material-ui-pagination/issues/16#issuecomment-323790709).
 
-- Now for the newest version, you can install by `npm install material-ui-pagination@next`.
+- Now for the newest version, you can install by `npm install material-ui-pagination@next`(the next version also includes support for react and react-dom version 16).
 - Otherwise go with the stable version by `npm install material-ui-pagination`.
 
 
