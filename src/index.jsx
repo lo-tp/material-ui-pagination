@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import FlatButton from 'material-ui/FlatButton';
-import NavigationFirstPage from 'material-ui/svg-icons/navigation/first-page';
-import NavigationLastPage from 'material-ui/svg-icons/navigation/last-page';
+import Button from 'material-ui/Button';
+import NavigationFirstPage from 'material-ui-icons/ChevronLeft';
+import NavigationLastPage from 'material-ui-icons/ChevronRight';
 
 const flatButtonStyle = {
   minWidth: 16,
@@ -44,12 +44,12 @@ const getStateFromProps = props => {
 };
 
 const Page = ({ value, isActive, onClick, styleButton, stylePrimary }) => {
-  return !styleButton ? (<FlatButton
+  return !styleButton ? (<Button
     style = { flatButtonStyle }
     label = { value.toString() }
     primary = { isActive }
     onClick = { onClick }
-  />) : (<div
+  >{value.toString()}</Button>) : (<div
     style = { isActive ? stylePrimary : styleButton }
     label = { value.toString() }
     onClick = { onClick }
@@ -67,11 +67,10 @@ Page.propTypes = {
 };
 
 const FirstPageLink = ({ onClick, styleFirstPageLink }) => {
-  return !styleFirstPageLink ? (<FlatButton
+  return !styleFirstPageLink ? (<Button
     style = { flatButtonStyle }
-    icon = { <NavigationFirstPage /> }
     onClick = { onClick }
-  />) : (<div
+  ><NavigationFirstPage /></Button>) : (<div
     style = { styleFirstPageLink }
     onClick = { onClick }
   />);
@@ -83,11 +82,10 @@ FirstPageLink.propTypes = {
 };
 
 const LastPageLink = ({ onClick, styleLastPageLink }) => {
-  return !styleLastPageLink ? (<FlatButton
+  return !styleLastPageLink ? (<Button
     style = { flatButtonStyle }
-    icon = { <NavigationLastPage /> }
     onClick = { onClick }
-  />) : (<div
+    ><NavigationLastPage /></Button>) : (<div
     style = { styleLastPageLink }
     onClick = { onClick }
   />);
